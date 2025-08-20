@@ -1,0 +1,35 @@
+{
+  "name": "com.tianry.commontools",
+  "version": "1.0.0",
+  "displayName": "Common Tools",
+  "description": "A comprehensive Unity utility package providing common tools for UI management, logging, time formatting, number formatting, currency symbols, and more.",
+  "unity": "2020.3",
+  "unityRelease": "0f1",
+  "documentationUrl": "https://github.com/youngtry/CommonTools#readme",
+  "changelogUrl": "https://github.com/youngtry/CommonTools/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/youngtry/CommonTools/blob/main/LICENSE",
+  "keywords": [
+    "utility",
+    "tools",
+    "ui",
+    "logging",
+    "formatting",
+    "currency",
+    "time",
+    "helper"
+  ],
+  "author": {
+    "name": "Tianry",
+    "email": "YOUR_EMAIL@example.com",
+    "url": "https://github.com/youngtry"
+  },
+  "type": "library",
+  "hideInEditor": false,
+  "samples": [
+    {
+      "displayName": "Basic Usage Examples",
+      "description": "Examples showing how to use the Common Tools utilities",
+      "path": "Samples~/BasicUsage"
+    }
+  ]
+}

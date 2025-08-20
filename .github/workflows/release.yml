@@ -1,0 +1,61 @@
+name: Release UPM Package
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    
+    - name: Get version from tag
+      id: get_version
+      run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+    
+    - name: Update package.json version
+      run: |
+        sed -i 's/"version": ".*"/"version": "${{ steps.get_version.outputs.VERSION }}"/' package.json
+    
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: |
+          ## Changes in this Release
+          
+          See [CHANGELOG.md](CHANGELOG.md) for detailed changes.
+          
+          ## Installation
+          
+          ### Via Git URL
+          ```
+          https://github.com/${{ github.repository }}.git#${{ github.ref }}
+          ```
+          
+          ### Via Package Manager
+          1. Open Unity Package Manager
+          2. Click "+" and select "Add package from git URL"
+          3. Enter the URL above
+        draft: false
+        prerelease: false
+    
+    - name: Upload package.json
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./package.json
+        asset_name: package.json
+        asset_content_type: application/json
