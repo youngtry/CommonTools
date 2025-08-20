@@ -11,6 +11,8 @@ A comprehensive Unity utility package providing common tools for UI management, 
 - **Currency Symbols**: Support for 100+ international currency symbols
 - **Ordinal Numbers**: Convert numbers to English ordinal format (1st, 2nd, 3rd, etc.)
 - **Sprite Management**: Utilities for working with Sprite Atlases
+- **Singleton Pattern**: Generic singleton MonoBehaviour base class for easy singleton implementation
+- **Rounded UI Components**: Custom UI components with rounded corners for enhanced visual design
 
 ## Installation
 
@@ -110,6 +112,89 @@ public class Example : MonoBehaviour
 ### Sprite Management
 
 - `Utils.GetSpriteFromAtlas(string spriteName, string atlasName)`: Get sprite from atlas
+
+### Singleton Pattern
+
+The `SingletonMonoBehaviour<T>` class provides a generic singleton pattern for MonoBehaviour components:
+
+```csharp
+using CommonTools;
+
+public class GameManager : SingletonMonoBehaviour<GameManager>
+{
+    public override void Awake()
+    {
+        base.Awake(); // Important: call base.Awake()
+
+        // Your initialization code here
+        Utils.Log("GameManager initialized", Utils.LogType.Info);
+    }
+
+    public void DoSomething()
+    {
+        Utils.Log("Doing something...", Utils.LogType.Debug);
+    }
+}
+
+// Usage from other scripts:
+public class PlayerController : MonoBehaviour
+{
+    void Start()
+    {
+        // Access the singleton instance
+        GameManager.Instance.DoSomething();
+
+        // Check if singleton exists
+        if (GameManager.Exists())
+        {
+            Utils.Log("GameManager is available", Utils.LogType.Info);
+        }
+    }
+}
+```
+
+**Key Features:**
+- Automatic singleton instance creation if none exists
+- Automatic destruction of duplicate instances
+- Thread-safe instance access
+- `Exists()` method to check if instance is available
+- `Reset()` method to clear the singleton instance
+
+### Rounded UI Components
+
+The `UIRoundedRawImage` component extends Unity's RawImage to provide rounded corners:
+
+```csharp
+using CommonTools;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class UIExample : MonoBehaviour
+{
+    void Start()
+    {
+        // Get or add the rounded raw image component
+        UIRoundedRawImage roundedImage = GetComponent<UIRoundedRawImage>();
+
+        // Configure the rounded corners
+        roundedImage.Radius = 25f;        // Corner radius (smaller = more rounded)
+        roundedImage.TriangleNum = 8;     // Smoothness (higher = smoother curves)
+
+        // Set the texture
+        roundedImage.texture = yourTexture;
+    }
+}
+```
+
+**Properties:**
+- `Radius` (float): Controls the corner radius. Smaller values create more rounded corners
+- `TriangleNum` (int): Number of triangles per corner. Higher values create smoother curves
+
+**Usage Tips:**
+- Use `Radius = 50f` for slightly rounded corners
+- Use `Radius = 10f` for very rounded corners
+- Use `TriangleNum = 6-12` for good performance/quality balance
+- Higher `TriangleNum` values improve visual quality but may impact performance
 
 ## Examples
 

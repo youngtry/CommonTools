@@ -5,6 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.7] - 2025-08-20
+
+### Added
+- **SingletonMonoBehaviour<T>**: Generic singleton pattern base class for MonoBehaviour components
+  - Automatic singleton instance creation and management
+  - Thread-safe instance access with lazy initialization
+  - Automatic destruction of duplicate instances
+  - `Exists()` method to check instance availability
+  - `Reset()` method to clear singleton instance
+- **UIRoundedRawImage**: Custom UI component extending RawImage with rounded corners
+  - Configurable corner radius for visual customization
+  - Adjustable triangle count for smooth curve rendering
+  - Proper UV mapping for texture display
+  - Performance-optimized mesh generation
+
+### Changed
+- Updated README.md with comprehensive documentation for new components
+- Added detailed usage examples and API reference for new features
+- Enhanced feature list to include singleton pattern and rounded UI components
+
+### Technical Details
+- SingletonMonoBehaviour uses FindAnyObjectByType for Unity 2023+ compatibility
+- UIRoundedRawImage implements custom mesh generation with VertexHelper
+- Both components include proper .meta files for Unity Package Manager
+- All new scripts follow CommonTools namespace convention
+- Added proper error handling and validation in singleton implementation
+
 ## [1.0.6] - 2025-08-20
 
 ### Fixed
