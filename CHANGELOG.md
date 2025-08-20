@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.8] - 2025-08-20
+
+### Fixed
+- Fixed GUID conflicts in .meta files for new components
+- Resolved Unity Package Manager warnings about duplicate GUIDs
+- Updated SingletonMonoBehaviour.cs.meta with unique GUID (8f9a1b2c3d4e5f6a7b8c9d0e1f2a3b4c)
+- Updated UIRoundedRawImage.cs.meta with unique GUID (5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a)
+
+### Technical Details
+- All .meta files now have properly generated unique GUIDs
+- Package can now be imported without Unity warnings or conflicts
+- Improved package stability and Unity Package Manager compatibility
+
 ## [1.0.7] - 2025-08-20
 
 ### Added
