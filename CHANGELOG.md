@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.5] - 2025-01-20
+
+### Fixed
+- Fixed "PUBLISHING.md has no meta file" error in Unity Package Manager
+- Removed PUBLISHING.md from UPM package (development document, not for end users)
+- Added development files to .gitignore to prevent future inclusion
+
+### Removed
+- PUBLISHING.md (moved to development-only files)
+- Development scripts from package distribution
+
+### Technical Details
+- Package now only contains files relevant to end users
+- No more Unity warnings about missing .meta files for development documents
+- Cleaner package structure focused on user-facing content
+
 ## [1.0.4] - 2025-01-20
 
 ### Changed
