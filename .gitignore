@@ -35,10 +35,10 @@
 # Keep .meta files for UPM package structure
 !Runtime.meta
 !Runtime/*.meta
-!Samples~.meta
-!Samples~/**/*.meta
+!Samples.meta
+!Samples/**/*.meta
 !Documentation~.meta
-!Documentation~/*.meta
+!Documentation~/**/*.meta
 !*.md.meta
 !LICENSE.meta
 !package.json.meta
