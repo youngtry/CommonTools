@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.6] - 2025-08-20
+
+### Fixed
+- Fixed package.json validation error by removing invalid "type": "library" field
+- Package.json now validates correctly according to Unity Package Manager standards
+
+### Changed
+- Updated author email from placeholder to youngtry@163.com
+
+### Technical Details
+- Removed unsupported "type" field that was causing IDE validation warnings
+- Package manifest now follows proper Unity UPM specifications
+- Author contact information updated with valid email address
+
 ## [1.0.5] - 2025-01-20
 
 ### Fixed
