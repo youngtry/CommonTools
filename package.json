@@ -1,6 +1,6 @@
 {
   "name": "com.tianry.commontools",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "displayName": "Common Tools",
   "description": "A comprehensive Unity utility package providing common tools for UI management, logging, time formatting, number formatting, currency symbols, and more.",
   "unity": "2020.3",
@@ -20,10 +20,9 @@
   ],
   "author": {
     "name": "Tianry",
-    "email": "YOUR_EMAIL@example.com",
+    "email": "youngtry@163.com",
     "url": "https://github.com/youngtry"
   },
-  "type": "library",
   "hideInEditor": false,
   "samples": [
     {
