@@ -79,6 +79,10 @@ Desktop.ini
 *.swp
 *.tmp
 
+# Development files (not for UPM package)
+PUBLISHING.md
+sync_to_runtime.sh
+
 # Package specific ignores
 # Keep these UPM package files:
 # ✓ package.json
@@ -87,7 +91,7 @@ Desktop.ini
 # ✓ CHANGELOG.md
 # ✓ LICENSE
 # ✓ Runtime/
-# ✓ Samples~/
-# ✓ Documentation~/
+# ✓ Samples/
+# ✓ Documentation/
 # ✓ Editor/ (if exists)
 # ✓ Tests/ (if exists)
