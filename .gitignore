@@ -32,6 +32,14 @@
 *.pdb.meta
 *.mdb.meta
 
+# Keep .meta files for UPM package structure
+!Runtime/*.meta
+!Samples~/**/*.meta
+!Documentation~/*.meta
+!*.md.meta
+!LICENSE.meta
+!package.json.meta
+
 # Unity3D generated file on crash reports
 sysinfo.txt
 
