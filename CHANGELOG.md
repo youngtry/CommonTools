@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2025-01-20
+
+### Fixed
+- Fixed "Asset has no meta file" errors in Unity Package Manager
+- Added missing .meta files for all Runtime scripts and assets
+- Added missing .meta files for documentation and license files
+- Added missing .meta files for Samples scripts
+- Updated .gitignore to properly include necessary .meta files for UPM packages
+
+### Added
+- CommonToolsTest.cs for automatic package verification and testing
+- sync_to_runtime.sh script for development workflow when maintaining dual versions
+
+### Technical Details
+- All UPM package files now have proper Unity .meta files
+- Package should now load correctly without warnings in Unity Package Manager
+- Added automatic package loading verification via RuntimeInitializeOnLoadMethod
+
 ## [1.0.0] - 2025-01-20
 
 ### Added
