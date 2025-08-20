@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2025-01-20
+
+### Changed
+- **BREAKING CHANGE**: Renamed Samples~ directory to Samples (removed tilde)
+- Updated package.json to use correct Samples path
+- Cleaned up package structure for better UPM compatibility
+
+### Added
+- Added missing .meta files for all Documentation files
+- Complete .meta file coverage for all package assets
+
+### Removed
+- Removed sync_to_runtime.sh script from package (development tool, not needed in package)
+
+### Fixed
+- Fixed missing .meta files for Documentation directory contents
+- Improved .gitignore patterns for Samples directory
+
+### Technical Details
+- Samples directory path changed from `Samples~/BasicUsage` to `Samples/BasicUsage`
+- All Documentation files now have proper .meta files
+- Package structure is now fully compliant with Unity Package Manager standards
+
 ## [1.0.2] - 2025-01-20
 
 ### Fixed

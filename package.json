@@ -1,6 +1,6 @@
 {
   "name": "com.tianry.commontools",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "Common Tools",
   "description": "A comprehensive Unity utility package providing common tools for UI management, logging, time formatting, number formatting, currency symbols, and more.",
   "unity": "2020.3",
